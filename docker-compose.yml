@@ -2,7 +2,7 @@ version: '2'
 
 services:
   alfresco:
-    image: mcronce/alfresco-platform:5.2.f
+    image: mcronce/alfresco-platform:latest
     environment:
       CATALINA_OPTS: "-Xmx1G -XX:+UseConcMarkSweepGC"
     depends_on:
@@ -18,7 +18,7 @@ services:
       - /usr/local/tomcat/work/
 
   share:
-    image: mcronce/alfresco-share:5.2.e
+    image: mcronce/alfresco-share:latest
     environment:
       CATALINA_OPTS: "-Xmx1G -XX:+UseConcMarkSweepGC"
     depends_on:
@@ -35,7 +35,7 @@ services:
       - /usr/local/tomcat/work/
 
   solr:
-    image: mcronce/alfresco-solr:5.2.f
+    image: mcronce/alfresco-solr:latest
     environment:
       CATALINA_OPTS: "-Xmx1G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:G1HeapRegionSize=8m -XX:MaxGCPauseMillis=200"
     depends_on:
@@ -51,7 +51,7 @@ services:
       - /usr/local/tomcat/work/
 
   libreoffice:
-    image: jeci/alfresco-libreoffice:5.2.7
+    image: mcronce/alfresco-libreoffice:latest
     restart: always
     networks:
       - internal
